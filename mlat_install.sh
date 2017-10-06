@@ -10,5 +10,6 @@ git checkout v0.2.5
 
 dpkg-buildpackage -b -uc
 
+sudo chown pi:pi ~/mlat-client
 
 sudo dpkg -i ../mlat-client_*.deb

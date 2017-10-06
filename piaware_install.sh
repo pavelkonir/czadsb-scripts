@@ -6,5 +6,5 @@ sudo dpkg -i piaware-repository_3.5.1_all.deb
 
 #Install piaware
 sudo apt-get update
-sudo apt-get install piaware piaware-web dump1090-fa -y
+sudo apt-get install piaware piaware-web dump1090-fa rtl-sdr -y
 
