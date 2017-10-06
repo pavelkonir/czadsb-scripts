@@ -1,14 +1,14 @@
 #!/bin/sh
 
-piawareVersion="3.5.1"
+piawareDeb="piaware-repository_3.5.1_all.deb"
 
 echo "***** Start script piaware install ******"
 
 sleep 3
 
 # Add piaware source
-wget http://flightaware.com/adsb/piaware/files/packages/pool/piaware/p/piaware-support/piaware-repository_$piawareVersion_all.deb
-sudo dpkg -i piaware-repository_$piawareVersion_all.deb
+wget http://flightaware.com/adsb/piaware/files/packages/pool/piaware/p/piaware-support/$piawareDeb
+sudo dpkg -i $piawareDeb
 
 #Install piaware
 sudo apt-get update
