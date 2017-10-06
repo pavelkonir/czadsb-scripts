@@ -1,5 +1,7 @@
 #!/bin/sh
 
+orange=true
+
 #Update and upgrade
 sudo apt-get update
 sudo apt-get upgrade -y
@@ -19,10 +21,11 @@ cd ~/downloads
 
 ~/czadsb-scripts/mlat_install.sh
 
-#detect hw version and download modesmixer
+~/czadsb-scripts/mm2_install.sh
 
-#hw_revision = cat /proc/cpuinfo | grep Revision| cut -d':' -f 2
-
+if $orange ; then
+	~/czadsb-scripts/orange_specific.sh
+fi
 
 
 
