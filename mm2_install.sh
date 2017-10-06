@@ -1,6 +1,6 @@
 #!/bin/sh
 
-echo “***** Start script modesmixer2 install ******”
+echo "***** Start script modesmixer2 install ******"
 sleep 3
 
 mm2Version="20170506"
@@ -18,4 +18,4 @@ sudo chown pi:pi ~/modesmixer2
 
 rm ~/downloads/modesmixer2_rpi2-3_$mm2Version.tgz
 
-echo “***** End script modesmixer2 install ******”
+echo "***** End script modesmixer2 install ******"
