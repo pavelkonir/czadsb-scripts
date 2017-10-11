@@ -1,6 +1,6 @@
 #!/bin/sh
 
-echo “***** Start script mlat install ******”
+echo "***** Start script mlat install ******"
 echo 3
 
 #Install mlat-client
@@ -17,4 +17,8 @@ sudo chown pi:pi ~/mlat-client
 
 sudo dpkg -i ../mlat-client_*.deb
 
-echo “***** End script mlat install ******”
+echo "copy czadsb starter script"
+cp ~/czadsb-scripts/starters/czadsb.mlat-client.shh ~/mlat-client/czadsb.mlat-client.sh
+sudo chmod +x ~/mlat-client/czadsb.mlat-client.sh
+
+echo "***** End script mlat install ******"

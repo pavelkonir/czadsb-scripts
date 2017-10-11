@@ -18,4 +18,8 @@ sudo chown pi:pi ~/modesmixer2
 
 rm ~/downloads/modesmixer2_rpi2-3_$mm2Version.tgz
 
+echo "copy czadsb starter script"
+cp ~/czadsb-scripts/starters/czadsb.modesmixer.sh ~/modesmixer2/czadsb.modesmixer.sh
+sudo chmod +x ~/modesmixer2/czadsb.modesmixer.sh
+
 echo "***** End script modesmixer2 install ******"
