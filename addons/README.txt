@@ -1,0 +1,1 @@
+Sem pridavat dalsi scripty (.sh). Budou abacedne spusteny.

@@ -6,4 +6,12 @@ dos2unix ./config.txt
 
 . ./config.txt
 
-/home/pi/modesmixer2/modesmixer2 $MM2_PARAMS
+if [ "$MM2_ENABLE_OUTCONNECT" = "yes" ]; then
+
+  /home/pi/modesmixer2/modesmixer2 $MM2_PARAMS --outConnect avr:czadsb.cz:$MM2_OUTCONNECT_PORT
+
+else
+
+  /home/pi/modesmixer2/modesmixer2 $MM2_PARAMS
+
+fi

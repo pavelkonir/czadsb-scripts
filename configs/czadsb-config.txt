@@ -1,0 +1,32 @@
+#N2N VPN config
+N2N_VPN=no
+
+N2N_IP=172.17.18.
+
+#Modesmixer2 config
+MODESMIXER2=no
+
+MM2_WEB_PORT=8181
+
+MM2_ENABLE_OUTCONNECT=no
+MM2_OUTCONNECT_PORT=
+
+#MLAT CLIENT config
+MLAT_CLIENT=no
+
+
+
+#BASIC STATION config
+STATION_LAT=
+STATION_LON=
+STATION_ALT=
+STATION_NAME="Nazev prijimace"
+
+
+
+
+MM2_PARAMS="--inConnect localhost:30005 --inConnect localhost:30106 --web $MM2_WEB_PORT --metric --location $STATION_LAT:$STATION_LON"
+
+MLAT_PARAMS="--input-type dump1090 --input-connect localhost:30005 --results basestation,connect,czadsb.cz:31003 --lat $STATION_LAT --lon $STATION_LON --alt $STATION_ALT --server czadsb.cz:40147"
+
+

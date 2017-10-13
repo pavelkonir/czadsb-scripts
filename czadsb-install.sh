@@ -1,30 +1,51 @@
 #!/bin/sh
 
-orange=true
+file="/boot/installed"
 
-#Update and upgrade
-sudo apt-get update
-sudo apt-get upgrade -y
-sudo apt-get install git
+if [ -f "$file" ]
+then
+  echo "czadsb installation begin"
 
-cd ~
-git clone https://github.com/pavelkonir/czadsb-scripts.git
-sudo chown pi:pi ~/czadsb-scripts
+  if [ -f "/etc/armbian-release" ]
+  then
+    echo "resize"
+  else
+    sudo resize2fs /dev/mmcblk0p
+    sudo reboot
+  fi
 
-sudo chmod +x ~/czadsb-scripts/*.sh
+  #Update and upgrade
+  sudo apt-get update
+  sudo apt-get upgrade -y
+  sudo apt-get install git
 
-mkdir ~/downloads
-sudo chown pi:pi ~/downloads
-cd ~/downloads
+  cd ~
+  git clone https://github.com/pavelkonir/czadsb-scripts.git
+  sudo chown pi:pi ~/czadsb-scripts
 
-~/czadsb-scripts/piaware_install.sh
+  sudo chmod +x ~/czadsb-scripts/*.sh
 
-~/czadsb-scripts/mlat_install.sh
+  mkdir ~/downloads
+  sudo chown pi:pi ~/downloads
+  cd ~/downloads
 
-~/czadsb-scripts/mm2_install.sh
+  ~/czadsb-scripts/piaware_install.sh
 
-if $orange ; then
-	~/czadsb-scripts/orange_specific.sh
+  ~/czadsb-scripts/mlat_install.sh
+
+  ~/czadsb-scripts/mm2_install.sh
+
+  if [ -f "/etc/armbian-release" ]
+  then
+    ~/czadsb-scripts/orange_specific.sh
+  fi
+
+  ~/czadsb-scripts/starters/autostart.sh
+
+  ~/czadsb-scripts/addons/*.sh
+
+  echo "Installed" > $file
+
 fi
 
 
