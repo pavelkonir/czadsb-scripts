@@ -56,6 +56,9 @@ then
   sudo chmod +x /home/pi/n2n/czadsb.n2n.sh
   sudo chown pi:pi /home/pi/n2n/czadsb.n2n.sh
 
+  echo "copy configs"
+  sudo cp /home/pi/czadsb-scripts/configs/czadsb-config.txt /boot/
+
   /home/pi/czadsb-scripts/starters/autostart.sh
 
   /home/pi/czadsb-scripts/addons/*.sh
