@@ -17,7 +17,6 @@ sudo apt-get install piaware piaware-web dump1090-fa rtl-sdr -y
 if [ ! -f "/etc/armbian-release" ]
     then
       sudo apt-get install piaware-support -y
-      sudo sed -i -e '1i\ctrl_interface=/var/run/wpa_supplicant' /etc/wpa_supplicant/wpa_supplicant.conf
     fi
 
 echo "***** End script piaware install ******"
