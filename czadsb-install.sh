@@ -32,6 +32,7 @@ then
   git clone https://github.com/pavelkonir/czadsb-scripts.git
   sudo chown pi:pi /home/pi/czadsb-scripts
 
+  sudo chmod +x /home/pi/czadsb-scripts/*.sh
   sudo chmod +x /home/pi/czadsb-scripts/**/*.sh
 
   mkdir /home/pi/downloads
