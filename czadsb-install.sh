@@ -56,7 +56,8 @@ then
   echo "Installed" > $file
 
 
-  sudo rm -f /home/pi/czadsb-boot.sh
+  #/boot/czadsb-boot.sh > /home/pi/boot-log.txt
+  sudo sed -i '/^\/boot/d' /etc/rc.local
 
 fi
 
