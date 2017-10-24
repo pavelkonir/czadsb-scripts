@@ -16,7 +16,7 @@ sudo apt-get install piaware piaware-web dump1090-fa rtl-sdr -y
 
 if [ ! -f "/etc/armbian-release" ]
     then
-      sudo apt-get install piaware-support
+      sudo apt-get install piaware-support -y
     fi
 
 echo "***** End script piaware install ******"
