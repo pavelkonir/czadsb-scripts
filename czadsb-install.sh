@@ -2,16 +2,18 @@
 
 file="/boot/installed"
 
-if [ -f "$file" ]
+if [ ! -f "$file" ]
 then
   echo "czadsb installation begin"
 
-  if [ -f "/etc/armbian-release" ]
+  if [ -f "/boot/resized" ]
   then
-    echo "resize"
-  else
-    sudo resize2fs /dev/mmcblk0p
-    sudo reboot
+    if [ ! -f "/etc/armbian-release" ]
+    then
+      sudo resize2fs /dev/mmcblk0p
+      sudo reboot
+    fi
+    sudo echo "Resized" > "/boot/resized"
   fi
 
   #Update and upgrade
@@ -23,7 +25,7 @@ then
   git clone https://github.com/pavelkonir/czadsb-scripts.git
   sudo chown pi:pi ~/czadsb-scripts
 
-  sudo chmod +x ~/czadsb-scripts/*.sh
+  sudo chmod +x ~/czadsb-scripts/**/*.sh
 
   mkdir ~/downloads
   sudo chown pi:pi ~/downloads
