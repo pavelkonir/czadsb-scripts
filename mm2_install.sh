@@ -6,20 +6,20 @@ sleep 3
 mm2Version="20170506"
 
 
-cd ~/downloads
+cd /home/pi/downloads
 
 wget https://czadsb.cz/rx-images/utils/modesmixer2_rpi2-3_$mm2Version.tgz
 
-mkdir ~/modesmixer2
-cd ~/modesmixer2
-tar -zxvf ~/downloads/modesmixer2_rpi2-3_$mm2Version.tgz
+mkdir /home/pi/modesmixer2
+cd /home/pi/modesmixer2
+tar -zxvf /home/pi/downloads/modesmixer2_rpi2-3_$mm2Version.tgz
 
-sudo chown pi:pi ~/modesmixer2
+sudo chown pi:pi /home/pi/modesmixer2
 
-rm ~/downloads/modesmixer2_rpi2-3_$mm2Version.tgz
+rm /home/pi/downloads/modesmixer2_rpi2-3_$mm2Version.tgz
 
 echo "copy czadsb starter script"
-cp ~/czadsb-scripts/starters/czadsb.modesmixer.sh ~/modesmixer2/czadsb.modesmixer.sh
-sudo chmod +x ~/modesmixer2/czadsb.modesmixer.sh
+cp /home/pi/czadsb-scripts/starters/czadsb.modesmixer.sh /home/pi/modesmixer2/czadsb.modesmixer.sh
+sudo chmod +x /home/pi/modesmixer2/czadsb.modesmixer.sh
 
 echo "***** End script modesmixer2 install ******"
