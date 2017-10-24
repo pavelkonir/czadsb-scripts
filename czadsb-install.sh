@@ -50,6 +50,12 @@ then
     /home/pi/czadsb-scripts/orange_specific.sh
   fi
 
+  echo "copy n2n starter script"
+  mkdir /home/pi/n2n
+  sudo cp /home/pi/czadsb-scripts/starters/czadsb.n2n.sh /home/pi/n2n/czadsb.n2n.sh
+  sudo chmod +x /home/pi/n2n/czadsb.n2n.sh
+  sudo chown pi:pi /home/pi/n2n/czadsb.n2n.sh
+
   /home/pi/czadsb-scripts/starters/autostart.sh
 
   /home/pi/czadsb-scripts/addons/*.sh
@@ -59,6 +65,8 @@ then
 
   #/boot/czadsb-boot.sh > /home/pi/boot-log.txt
   sudo sed -i '/^\/boot/d' /etc/rc.local
+
+  echo "CZADSB tools installed."
 
 fi
 
