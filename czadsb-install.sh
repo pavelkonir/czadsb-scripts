@@ -4,6 +4,13 @@ file="/boot/installed"
 
 if [ ! -f "$file" ]
 then
+
+  while ! ping -c 1 -W 1 google.com; do
+      echo "Waiting for ping google.comn - network interface might be down..."
+      sleep 1
+  done
+
+
   echo "czadsb installation begin"
 
   if [ -f "/boot/resized" ]
@@ -47,6 +54,9 @@ then
   ~/czadsb-scripts/addons/*.sh
 
   echo "Installed" > $file
+
+
+  sudo rm -f /etc/init.d/czadsb-boot.sh
 
 fi
 
