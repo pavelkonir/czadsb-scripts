@@ -1,15 +1,15 @@
 #!/bin/sh
 
 file="/boot/installed"
+file_version="1.0.0"
+
+while ! ping -c 1 -W 1 google.com; do
+  echo "Waiting for ping google.comn - network interface might be down..."
+  sleep 1
+done
 
 if [ ! -f "$file" ]
 then
-
-  while ! ping -c 1 -W 1 google.com; do
-      echo "Waiting for ping google.comn - network interface might be down..."
-      sleep 1
-  done
-
 
   echo "czadsb installation begin"
 
@@ -63,7 +63,7 @@ then
 
   /home/pi/czadsb-scripts/addons/*.sh
 
-  echo "Installed" > $file
+  echo $file_version > $file
 
 
   #/boot/czadsb-boot.sh > /home/pi/boot-log.txt
@@ -71,6 +71,10 @@ then
 
   echo "CZADSB tools installed."
 
+else
+    cd /home/pi/czadsb-scripts
+    git pull origin
+    /home/pi/czadsb-scripts/upgrade.sh
 fi
 
 
