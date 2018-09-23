@@ -1,6 +1,6 @@
 #!/bin/sh
 
-piawareDeb="piaware-repository_3.5.1_all.deb"
+piawareDeb="piaware-repository_3.6.3_all.deb"
 
 echo "***** Start script piaware install ******"
 
