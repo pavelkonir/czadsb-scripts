@@ -8,6 +8,9 @@ mm2Version="20170506"
 
 cd /home/pi/downloads
 
+wget http://ftp.nl.debian.org/debian/pool/main/o/openssl/libssl1.0.0_1.0.2l-1~bpo8+1_armhf.deb
+sudo dpkg -i libssl1.0.0_1.0.2l-1~bpo8+1_armhf.deb
+
 wget https://czadsb.cz/rx-images/utils/modesmixer2_rpi2-3_$mm2Version.tgz
 
 mkdir /home/pi/modesmixer2
