@@ -1,5 +1,7 @@
 #!/bin/sh
 
+sudo touch /boot/ssh
+
 file="/boot/installed"
 file_version="1.0.0"
 
