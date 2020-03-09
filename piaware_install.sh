@@ -12,11 +12,12 @@ sudo apt install git lighttpd debhelper librtlsdr-dev pkg-config dh-systemd libn
 git clone https://github.com/flightaware/dump1090 dump1090-fa 
 cd dump1090-fa 
 echo "***** Building dump1090-fa ******"
-dpkg-buildpackage -b --no-sign
+sudo dpkg-buildpackage -b --no-sign
 cd ..
 echo "***** Installing dump1090-fa ******"
 sudo dpkg -i dump1090-fa_3.8.0_arm64.deb
 sudo systemctl enable dump1090-fa.service
+sudo service dump1090-fa start
 
 #Install piaware
 sudo apt-get install piaware piaware-web rtl-sdr -y

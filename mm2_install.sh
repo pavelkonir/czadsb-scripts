@@ -14,7 +14,7 @@ sudo dpkg -i libssl1.0.0_1.0.2l-1~bpo8+1_armhf.deb
 mkdir /home/pi/modesmixer2
 cd /home/pi/modesmixer2
 wget https://github.com/hosek/czadsb-scripts/raw/master/modesmixer2
-
+sudo chmod +x modesmixer2
 sudo chown pi:pi /home/pi/modesmixer2
 
 echo "copy czadsb starter script"
