@@ -72,6 +72,7 @@ then
   sudo sed -i '/^\/boot/d' /etc/rc.local
 
   echo "CZADSB tools installed."
+  echo "Please edit /boot/czadsb-config.txt file"
 
 else
     cd /home/pi/czadsb-scripts
