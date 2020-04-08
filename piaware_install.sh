@@ -7,7 +7,7 @@ sleep 3
 echo "***** Preparing to build dump1090-fa ******"
 #Prepare for building
 sudo apt-get update
-sudo apt install git lighttpd debhelper librtlsdr-dev pkg-config dh-systemd libncurses5-dev libbladerf-dev libusb-1.0-0-dev
+sudo apt install git lighttpd debhelper librtlsdr-dev pkg-config dh-systemd libncurses5-dev libbladerf-dev libusb-1.0-0-dev python
 
 git clone https://github.com/flightaware/dump1090 dump1090-fa 
 cd dump1090-fa 
