@@ -31,7 +31,7 @@ then
   sudo apt-get install git dos2unix n2n mc -y
 
   cd /home/pi
-  git clone https://github.com/pavelkonir/czadsb-scripts.git
+  git clone https://github.com/hosek/czadsb-scripts.git
   sudo chown pi:pi /home/pi/czadsb-scripts
 
   sudo chmod +x /home/pi/czadsb-scripts/*.sh
