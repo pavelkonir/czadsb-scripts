@@ -21,6 +21,6 @@ sudo chown $username:$username ~/mlat-client
 echo "copy czadsb starter script"
 sudo cp ~/czadsb-scripts/starters/czadsb.mlat-client.sh ~/mlat-client/czadsb.mlat-client.sh
 sudo chmod +x ~/mlat-client/czadsb.mlat-client.sh
-sudo chown pi:pi ~/mlat-client/czadsb.mlat-client.sh
+sudo chown $username:$username ~/mlat-client/czadsb.mlat-client.sh
 
 echo "***** End script mlat install ******"
