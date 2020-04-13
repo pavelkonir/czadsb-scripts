@@ -38,9 +38,9 @@ then
   sudo chmod +x ~/czadsb-scripts/*.sh
   sudo chmod +x ~/czadsb-scripts/**/*.sh
 
-  # mkdir ~/downloads
-  # sudo chown $username:$username ~/downloads
-  # cd ~/downloads
+  mkdir ~/downloads
+  sudo chown $username:$username ~/downloads
+  cd ~/downloads
 
   ~/czadsb-scripts/piaware_install.sh
 
