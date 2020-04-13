@@ -15,7 +15,7 @@ echo "***** Building dump1090-fa ******"
 sudo dpkg-buildpackage -b --no-sign
 cd ..
 echo "***** Installing dump1090-fa ******"
-sudo dpkg -i dump1090-fa_3.8.0_arm64.deb
+sudo dpkg -i dump1090-fa_*.deb
 sudo systemctl enable dump1090-fa.service
 sudo service dump1090-fa start
 
