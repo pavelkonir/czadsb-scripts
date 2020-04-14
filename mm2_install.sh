@@ -19,7 +19,7 @@ if cat /proc/device-tree/model | grep -q 'Raspberry'; then
 elif [ `getconf LONG_BIT` = "64" ]; then
     echo "64 bit system detected, using AllWinner H5 64bit version" 
     cd ~/modesmixer2
-    wget https://github.com/hosek/czadsb-scripts/raw/master/modesmixer2
+    wget https://github.com/pavelkonir/czadsb-scripts/raw/master/modesmixer2
 else
     echo "Your platform is probably not supported by MM2" 
     return
