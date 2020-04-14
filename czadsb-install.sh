@@ -25,6 +25,8 @@ then
   #   sudo echo "Resized" > "/boot/resized"
   # fi
 
+
+  echo "========== Updating system =========="
   #Update and upgrade
   sudo apt-get update
   sudo apt-get upgrade -y -f
@@ -32,6 +34,7 @@ then
 
   username="$(id -u -n)"
   cd ~
+  echo "========== Copying the CZADSB scripts =========="
   git clone https://github.com/hosek/czadsb-scripts.git
   sudo chown $username:$username ~/czadsb-scripts
 
@@ -42,16 +45,19 @@ then
   sudo chown $username:$username ~/downloads
   cd ~/downloads
 
-  ~/czadsb-scripts/piaware_install.sh
+  echo "========== CZADSB scripts installation =========="
 
-  ~/czadsb-scripts/mlat_install.sh
+  ~/czadsb-scripts/piaware_install.sh && echo "========== Step (1/3) Piaware Installed ==========" || echo "========== Step (1/3) Piaware installation FAILED =========="
 
-  ~/czadsb-scripts/mm2_install.sh
+  ~/czadsb-scripts/mlat_install.sh && echo "========== Step (2/3) MLAT Installed ==========" || echo "========== Step (2/3) MLAT installation FAILED =========="
+
+  ~/czadsb-scripts/mm2_install.sh && echo "========== Step (3/3) MM2 Installed ==========" || echo "========== Step (3/3) MM2 installation FAILED =========="
 
   if [ -f "/etc/armbian-release" ]
   then
     ~/czadsb-scripts/armbian_specific.sh
   fi
+
 
   echo "copy n2n starter script"
   mkdir ~/n2n
