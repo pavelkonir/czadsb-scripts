@@ -72,7 +72,7 @@ then
 
   ~/czadsb-scripts/addons/*.sh
 
-  echo $file_version > $file
+  sudo echo $file_version > $file
 
 
   #/boot/czadsb-boot.sh > ~/boot-log.txt
