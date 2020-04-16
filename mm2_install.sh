@@ -15,6 +15,7 @@ sudo dpkg -i libssl1.0.0_1.0.2l-1~bpo8+1_armhf.deb
 if cat /proc/device-tree/model | grep -q 'Raspberry'; then
    mm2Version="20170506"
    wget https://czadsb.cz/rx-images/utils/modesmixer2_rpi2-3_$mm2Version.tgz
+   cd ~/modesmixer2
    tar -zxvf ~/downloads/modesmixer2_rpi2-3_$mm2Version.tgz
 elif [ `getconf LONG_BIT` = "64" ]; then
     echo "64 bit system detected, using AllWinner H5 64bit version" 
