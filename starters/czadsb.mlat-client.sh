@@ -9,5 +9,5 @@ dos2unix ./config.txt
 
 while [ "$MLAT_CLIENT" = "yes" ]; do
   sleep 5
-  ~/mlat-client/mlat-client $MLAT_PARAMS --user "$STATION_NAME"
+  mlat-client $MLAT_PARAMS --user "$STATION_NAME"
 done
