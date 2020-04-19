@@ -22,7 +22,7 @@ if [ "$VERSION_ID" = "10" ]; then
     python3 setup.py build
     sudo python3 setup.py install
     cd ~/mlat-client
-#fi
+fi
 
 #dpkg-buildpackage -b -uc
 username="$(id -u -n)"
