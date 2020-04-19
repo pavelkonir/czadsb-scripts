@@ -12,14 +12,16 @@ git clone https://github.com/mutability/mlat-client.git
 cd mlat-client
 git checkout v0.2.5
 
-#if cat /etc/os-release | grep VERSION_ID -q 'VERSION_ID="10"'; then
-    echo "Buster detected, fixing cx_Freeze" 
+. /etc/os-release
+if [ "$VERSION_ID" = "10" ]; then
+    echo "Buster detected, fixing cx_Freeze"
     sudo apt-get install  tcl8.6-dev autoconf python3-venv dh-systemd libz-dev -y
     wget 'https://github.com/anthony-tuininga/cx_Freeze/archive/6.0.tar.gz'
     tar -xvf 6.0.tar.gz
     cd cx_Freeze-6.0
     python3 setup.py build
-    python3 setup.py install
+    sudo python3 setup.py install
+    cd ~/mlat-client
 #fi
 
 #dpkg-buildpackage -b -uc
@@ -27,7 +29,7 @@ username="$(id -u -n)"
 sudo chown $username:$username ~/mlat-client
 
 #sudo dpkg -i ../mlat-client_*.deb
-./setup.py install
+sudo ./setup.py install
 
 echo "copy czadsb starter script"
 sudo cp ~/czadsb-scripts/starters/czadsb.mlat-client.sh ~/mlat-client/czadsb.mlat-client.sh
