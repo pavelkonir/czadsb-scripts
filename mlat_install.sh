@@ -12,7 +12,7 @@ git clone https://github.com/mutability/mlat-client.git
 cd mlat-client
 git checkout v0.2.5
 
-if cat /etc/os-release | grep VERSION_ID -q 'VERSION_ID="10"'; then
+#if cat /etc/os-release | grep VERSION_ID -q 'VERSION_ID="10"'; then
     echo "Buster detected, fixing cx_Freeze" 
     sudo apt-get install  tcl8.6-dev autoconf python3-venv dh-systemd libz-dev -y
     wget 'https://github.com/anthony-tuininga/cx_Freeze/archive/6.0.tar.gz'
@@ -20,7 +20,7 @@ if cat /etc/os-release | grep VERSION_ID -q 'VERSION_ID="10"'; then
     cd cx_Freeze-6.0
     python3 setup.py build
     python3 setup.py install
-fi
+#fi
 
 #dpkg-buildpackage -b -uc
 username="$(id -u -n)"
