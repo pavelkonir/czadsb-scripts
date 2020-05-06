@@ -1,6 +1,6 @@
 #!/bin/sh
 
-cp /boot/czadsb-config.txt config.txt
+sudo cp /boot/czadsb-config.txt config.txt
 
 dos2unix ./config.txt
 
