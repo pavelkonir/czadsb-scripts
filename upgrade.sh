@@ -12,5 +12,5 @@ if ! grep -q $file_version "$file"; then
   
 
   echo "Upgrade finish"
-  echo $file_version > $file
+  sudo echo $file_version > $file
 fi

@@ -7,6 +7,6 @@ STATION_NAME=“STATION NAME”
 
 while true; do
   sleep 5
-  /home/pi/mlat-client/mlat-client --input-type dump1090 --input-connect localhost:30005 --results basestation,connect,czadsb.cz:31003 --lat $STATION_LAT --lon $STATION_LON --alt $STATION_ALT --server czadsb.cz:40147 --user "$STATION_NAME"
+  ~/mlat-client/mlat-client --input-type dump1090 --input-connect localhost:30005 --results basestation,connect,czadsb.cz:31003 --lat $STATION_LAT --lon $STATION_LON --alt $STATION_ALT --server czadsb.cz:40147 --user "$STATION_NAME"
 done
 
