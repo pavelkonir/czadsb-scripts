@@ -7,4 +7,5 @@ if [ ! -f "/etc/armbian-release" ]
      sudo apt-get update
      sudo apt-get install rpimonitor -y
      sudo sudo apt-get -y -f install
+     sudo /etc/init.d/rpimonitor update
 fi

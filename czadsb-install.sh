@@ -35,7 +35,7 @@ then
   username="$(id -u -n)"
   cd ~
   echo "========== Copying the CZADSB scripts =========="
-  git clone https://github.com/hosek/czadsb-scripts.git
+  git clone https://github.com/pavelkonir/czadsb-scripts.git
   sudo chown $username:$username ~/czadsb-scripts
 
   sudo chmod +x ~/czadsb-scripts/*.sh
