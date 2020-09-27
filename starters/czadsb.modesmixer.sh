@@ -12,6 +12,6 @@ if [ "$MM2_ENABLE_OUTCONNECT" = "yes" ]; then
 
 else
 
-  /home/USEERNAME/modesmixer2/modesmixer2 $MM2_PARAMS
+  /home/USERNAME/modesmixer2/modesmixer2 $MM2_PARAMS
 
 fi
