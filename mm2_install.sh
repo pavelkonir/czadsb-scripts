@@ -32,7 +32,6 @@ sudo chown $username:$username ~/modesmixer2
 
 echo "copy czadsb starter script"
 sudo cp ~/czadsb-scripts/starters/czadsb.modesmixer.sh ~/modesmixer2/czadsb.modesmixer.sh
-sed -i "s/USER/$username/g" ~/modesmixer2/czadsb.modesmixer.sh
 sudo chmod +x ~/modesmixer2/czadsb.modesmixer.sh
 sudo chown $username:$username ~/modesmixer2/czadsb.modesmixer.sh
 
