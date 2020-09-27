@@ -13,7 +13,7 @@ sudo dpkg -i libssl1.0.0_1.0.2l-1~bpo8+1_armhf.deb
 
 # Use device specific MM2 - 32bit on RPI or Orange H5 64bit, there are no other choices http://xdeco.org/?page_id=30
 if cat /proc/device-tree/model | grep -q 'Raspberry'; then
-   wget https://github.com/hosek/czadsb-scripts/raw/master/modesmixer2_rpi2-3_deb9.tgz
+   wget https://github.com/pavelkonir/czadsb-scripts/raw/master/modesmixer2_rpi2-3_deb9.tgz
    cd ~/modesmixer2
    tar -zxvf ~/downloads/modesmixer2_rpi2-3_deb9.tgz
 elif [ `getconf LONG_BIT` = "64" ]; then
