@@ -1,6 +1,8 @@
 
 echo "Ukoncuji mlat klienta (pokud bezi)"
 sudo killall  mlat-client
+echo "Cistim logy"
+sudo rm -rf /var/log
 cd ~
 echo "Odstranuji stareho mlat klienta"
 sudo rm -rf mlat-client
@@ -21,9 +23,16 @@ if [ "$VERSION_ID" = "10" ]; then
     cd ~/mlat-client
 fi
 
-#dpkg-buildpackage -b -uc
 username="$(id -u -n)"
 sudo chown $username:$username ~/mlat-client
 
 echo "Zahajuji instalaci"
 sudo ./setup.py install
+
+echo "Updatuji mlat startovaci skript"
+sudo rm ~/mlat-client/czadsb.mlat-client.sh
+sudo cp ~/czadsb-scripts/starters/czadsb.mlat-client.sh ~/mlat-client/czadsb.mlat-client.sh
+sudo chmod +x ~/mlat-client/czadsb.mlat-client.sh
+sudo chown $username:$username ~/mlat-client/czadsb.mlat-client.sh
+
+echo "Hotovo"
