@@ -10,7 +10,7 @@ sudo apt-get install git build-essential debhelper python3-dev -y
 cd ~
 git clone https://github.com/mutability/mlat-client.git
 cd mlat-client
-git checkout v0.2.5
+git checkout v0.2.11
 
 . /etc/os-release
 if [ "$VERSION_ID" = "10" ]; then
