@@ -89,9 +89,13 @@ then
   echo "Please edit /boot/czadsb-config.txt file"
 
 else
-    cd ~/czadsb-scripts
-    git pull origin
-    ~/czadsb-scripts/upgrade.sh
+     username="$(id -u -n)"
+     sudo chown $username:$username -R ~/czadsb-scripts
+     cd ~/czadsb-scripts
+     git reset --hard
+     git pull origin
+     sudo chmod +x upgrade.sh
+     ./upgrade.sh
 fi
 
 
