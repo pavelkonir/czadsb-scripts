@@ -1,5 +1,6 @@
 #!/bin/sh
 
+
 file_version=1.0.3
 
 
@@ -12,5 +13,6 @@ if ! grep -q $file_version "$file"; then
   sudo chmod +x mlat-upgrade.sh
   ./mlat-upgrade.sh
   echo "Upgrade finished"
+  
   sudo echo $file_version > $file
 fi
