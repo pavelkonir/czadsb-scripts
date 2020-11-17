@@ -7,16 +7,10 @@ file="/boot/installed"
 
 if ! grep -q $file_version "$file"; then
   echo "Upgrade running"
-  if [[ $EUID -ne 0 ]]; then
-    ./upgrade/mlat-upgrade.sh
-  else
-    echo "Spustte skript pod uzivatelem pouzitym pri instalaci (pravdepodobne pi)" 2>&1
-    exit 1
-  fi
- 
 
-  
-
-  echo "Upgrade finish"
+  cd ~/czadsb-scripts/upgrade
+  sudo chmod +x mlat-upgrade.sh
+  ./mlat-upgrade.sh
+  echo "Upgrade finished"
   sudo echo $file_version > $file
 fi
