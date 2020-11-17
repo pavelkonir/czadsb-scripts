@@ -1,6 +1,6 @@
 #!/bin/sh
 
-file_version=1.0.2
+file_version=1.0.3
 
 
 file="/boot/installed"
