@@ -12,15 +12,18 @@ wget http://freedom.dicea.unifi.it/debian/pool/main/o/openssl/libssl1.0.0_1.0.2l
 sudo dpkg -i libssl1.0.0_1.0.2l-1~bpo8+1_armhf.deb
 
 # Use device specific MM2 - 32bit on RPI or Orange H5 64bit, there are no other choices http://xdeco.org/?page_id=30
-if cat /proc/device-tree/model | grep -q 'Raspberry'; then
-    cp ~/czadsb-scripts/modesmixer2 ~/modesmixer2/modesmixer2
+if cat /proc/device-tree/model | grep -q 'Raspberry Pi 4'; then
+    cp ~/czadsb-scripts/mm2/modesmixer2-rpi4 ~/modesmixer2/modesmixer2
+elif cat /proc/device-tree/model | grep -q 'Raspberry Pi Model B+'; then
+    cp ~/czadsb-scripts/mm2/modesmixer2-rpi1 ~/modesmixer2/modesmixer2
+elif cat /proc/device-tree/model | grep -q 'Raspberry'; then
+    cp ~/czadsb-scripts/mm2/modesmixer2-rpi2-3_deb9 ~/modesmixer2/modesmixer2
 elif [ `getconf LONG_BIT` = "64" ]; then
     echo "64 bit system detected, using AllWinner H5 64bit version"
     cp ~/czadsb-scripts/modesmixer2-64 ~/modesmixer2/modesmixer2
 else
-    echo "Your platform is probably not supported by MM2" 2>&1
-    exit 1
-    return
+    echo "Unable to found right version of MM2, using default one, its possible that it will not work" 2>&1
+    cp ~/czadsb-scripts/mm2/modesmixer2-rpi2-3_deb9 ~/modesmixer2/modesmixer2
 fi
 
 cd ~/modesmixer2

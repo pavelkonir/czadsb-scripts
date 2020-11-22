@@ -3,7 +3,7 @@
 sudo touch /boot/ssh
 
 file="/boot/installed"
-file_version="1.0.1"
+file_version="1.0.4"
 
 while ! ping -c 1 -W 1 google.com; do
   echo "Waiting for ping google.comn - network interface might be down..."
@@ -72,11 +72,19 @@ then
 
   ~/czadsb-scripts/addons/*.sh
 
-  sudo echo $file_version > $file
-
+  sudo echo $file_version | sudo tee -a $file
 
   #/boot/czadsb-boot.sh > ~/boot-log.txt
   sudo sed -i '/^\/boot/d' /etc/rc.local
+
+
+echo "================== File check ========================"
+  sudo chmod +x ~/czadsb-scripts/help.sh
+  [ -f /boot/installed ] && echo "installed OK." || echo "/boot/installed NOT FOUND."
+  [ -f /boot/czadsb-config.txt ] && echo "czadsb-config.txt OK." || echo "/boot/czadsb-config.txt NOT FOUND."
+  [ -f ~/mlat-client/czadsb.mlat-client.sh ] && echo "czadsb.mlat-client.sh OK." || echo "home/pi/mlat-client/czadsb.mlat-client.sh NOT FOUND."
+  [ -f ~/modesmixer2/czadsb.modesmixer.sh ] && echo "czadsb.modesmixer.sh OK." || echo "/home/pi/modesmixer2/czadsb.modesmixer.sh NOT FOUND."
+  [ -f ~/n2n/czadsb.n2n.sh ] && echo "czadsb.n2n.sh OK." || echo "/home/pi/n2n/czadsb.n2n.sh NOT FOUND."
 
   echo "██████╗███████╗ █████╗ ██████╗ ███████╗██████╗ "
   echo "██╔════╝╚══███╔╝██╔══██╗██╔══██╗██╔════╝██╔══██╗"
