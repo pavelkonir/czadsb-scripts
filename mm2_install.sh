@@ -14,7 +14,7 @@ sudo dpkg -i libssl1.0.0_1.0.2l-1~bpo8+1_armhf.deb
 # Use device specific MM2 - 32bit on RPI or Orange H5 64bit, there are no other choices http://xdeco.org/?page_id=30
 if cat /proc/device-tree/model | grep -q 'Raspberry Pi 4'; then
     cp ~/czadsb-scripts/mm2/modesmixer2-rpi4 ~/modesmixer2/modesmixer2
-elif cat /proc/device-tree/model | grep -q 'Raspberry Pi Model B+'; then
+elif cat /proc/device-tree/model | grep -q 'Raspberry Pi Model B Plus'; then
     cp ~/czadsb-scripts/mm2/modesmixer2-rpi1 ~/modesmixer2/modesmixer2
 elif cat /proc/device-tree/model | grep -q 'Raspberry'; then
     cp ~/czadsb-scripts/mm2/modesmixer2-rpi2-3_deb9 ~/modesmixer2/modesmixer2
