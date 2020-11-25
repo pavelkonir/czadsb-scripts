@@ -25,7 +25,7 @@ STATION_NAME="Nazev prijimace"
 
 
 
-MM2_PARAMS="--inConnect localhost:30005 --inConnect localhost:30106 --web $MM2_WEB_PORT --metric --location $STATION_LAT:$STATION_LON"
+MM2_PARAMS="--inConnect localhost:30005 --web $MM2_WEB_PORT --metric --location $STATION_LAT:$STATION_LON"
 
 MLAT_PARAMS="--input-type dump1090 --input-connect localhost:30005 --results basestation,connect,czadsb.cz:31003 --lat $STATION_LAT --lon $STATION_LON --alt $STATION_ALT --server czadsb.cz:40147"
 
