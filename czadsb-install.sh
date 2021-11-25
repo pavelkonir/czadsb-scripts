@@ -28,7 +28,7 @@ then
 
   echo "========== Updating system =========="
   #Update and upgrade
-  sudo apt-get update
+  sudo apt-get update --allow-releaseinfo-change
   sudo apt-get upgrade -y -f
   sudo apt-get install git dos2unix n2n mc -y
 
