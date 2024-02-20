@@ -20,8 +20,8 @@ sudo systemctl enable dump1090-fa.service
 sudo service dump1090-fa start
 
 #Install piaware
-wget https://flightaware.com/adsb/piaware/files/packages/pool/piaware/p/piaware-support/piaware-repository_4.0_all.deb
-sudo dpkg -i piaware-repository_4.0_all.deb
+wget https://www.flightaware.com/adsb/piaware/files/packages/pool/piaware/f/flightaware-apt-repository/flightaware-apt-repository_1.2_all.deb
+sudo dpkg -i flightaware-apt-repository_1.2_all.deb
 sudo apt-get update
 sudo apt-get install piaware piaware-web rtl-sdr -y
 
